@@ -263,6 +263,19 @@
 			  <div class="form-group">
 				  <label for="pwd">Password:</label>
 				  <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+				  <p id="text" style="color: red; display: none;">WARNING !! Caps lock is ON.</p>
+				  <script>
+					var pass = document.getElementById("pwd");
+					var text = document.getElementById("text");
+					pass.addEventListener("keyup", function(event) {
+
+					if (event.getModifierState("CapsLock")) {
+					    text.style.display = "block";
+					  } else {
+					    text.style.display = "none"
+					  }
+					});
+				</script>
 				</div>
 				<div class="checkbox">
 				  <label><input type="checkbox"> Remember me</label>
